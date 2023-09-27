@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h4>PROSTOKĄT</h4>
+
+    <label>Bok a: </label><input type="number" id="a" oninput="licz()"><br>
+    <label>Bok b: </label><input type="number" id="b" oninput="licz()"><br>
+    <label>Pole prostokątu:</label><input type="number" id="pole" disabled><br>
+    <label>Obwód prostokątu:</label><input type="number" id="obwod" disabled><br>
+    <label>Przekątna prostokątu:</label><input type="number" id="przek" disabled><br>
+
+
+    <h4>KOŁO</h4>
+
+    <label>Podaj r:</label><input type="number" id="r" oninput="licz()"><br>
+    <label>Pole koła:</label><input type="number" id="polek" disabled><br>
+    <label>Obwód koła:</label><input type="number" id="obwk" disabled><br>
+
+
+    <h4>PRZED SORTOWANIEM</h4>
+    <p id="przed"></p>
+
+    <h4>PO SORTOWANIU</h4>
+    <ul>
+    <p id="po"></p>
+    </ul>
+
+    <h4>RANDOM</h4>
+    <p id="random"></p>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
