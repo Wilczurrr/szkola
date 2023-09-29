@@ -31,9 +31,9 @@ function licz() {
 
 
 
-//ARRAY
+//ARRAY CYFRY
 
-const lista = [1,232,64,123,7,3,1]
+const lista = [1,232,64,123,7,3,1] //Stworzenie i wyświetlenie listy
 
 let text = ""
 
@@ -44,18 +44,18 @@ for(let i = 0; i < lista.length ;i++){
 
 document.getElementById("przed").innerHTML = text
 
-const newlista = lista.sort(function(a, b){return a - b})
+const newlista = lista.sort(function(a, b){return a - b})  //Posortowanie i wyświetlenie
 text = ""
 
 for(i = 0; i < newlista.length; i++){
 
-    text += "<li>" + newlista[i];
+    text += "<li>" + newlista[i] + "</li>";
 }
 
 document.getElementById("po").innerHTML = text
 
 
-const randomlista = lista.sort(function(){return 0.5 - Math.random()})
+const randomlista = lista.sort(function(){return 0.5 - Math.random()}) //Zrandomizowanie listy i wyświetlenie
 text = ""
 
 
@@ -65,3 +65,36 @@ for(i = 0; i < randomlista.length; i++){
 }
 
 document.getElementById("random").innerHTML = text
+
+
+
+
+//ARRAY STRINGI
+
+const listatext = ["Bannan","Pomarańcza","Granat","Arbuz","Cytryna"] //Stworzenie i wyświetlenie listy
+
+text = ""
+
+for(let i = 0; i < listatext.length ;i++){
+
+    text += listatext[i] + "<br>";
+}
+
+document.getElementById("przedtext").innerHTML = text
+
+const newlistatext = listatext.sort()  //Posortowanie i wyświetlenie
+text = ""
+
+for(i = 0; i < newlistatext.length; i++){
+
+    text += "<li>" + newlistatext[i] + "</li>";
+}
+
+document.getElementById("potext").innerHTML = text
+
+
+
+
+
+
+
