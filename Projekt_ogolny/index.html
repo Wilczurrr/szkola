@@ -43,6 +43,18 @@
     <p id="potext"></p>
     </ul>
 
+    <h4>WYJĄTKI</h4>
+    <label>Wprowadź liczbę:</label><input type="text" id="liczbaInput" oninput="sprawdzLiczbe()"><br>
+    <p id="wynikWyjatek"></p>
+
+    <h4>TEKST</h4>
+
+    <label>E-mail</label><input id="emailInput" type="text" oninput="sprawdzEmail()"><br>
+    <p id="emailWynik"></p>
+    <label>Hasło</label> <input type="text" id="hasloInput" >
+    <button onclick="sprawdzHaslo()">Sprawdź hasło</button>
+    <p id="hasloWynik"></p>
+  
 
     <script src="index.js"></script>
 
