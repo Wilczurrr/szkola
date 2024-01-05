@@ -93,8 +93,52 @@ for(i = 0; i < newlistatext.length; i++){
 document.getElementById("potext").innerHTML = text
 
 
+//WYJĄTKI
 
+function sprawdzLiczbe() {
+    try {
+      const inputWyjatki = document.getElementById('liczbaInput');
+      const wynikWyjatki = document.getElementById('wynikWyjatek');
+      const wartosc = parseFloat(inputWyjatki.value);
 
+      if (isNaN(wartosc)) {
+        throw new Error('Wprowadzona wartość nie jest liczbą');
+      }
 
+      wynikWyjatki.textContent = 'Wprowadzona wartość jest liczbą: ' + wartosc;
 
+    } catch (error) {
+        const wynikWyjatki = document.getElementById('wynikWyjatek');
+        wynikWyjatki.textContent = 'Błąd: ' + error.message;
+      } finally {
+        console.log('Sprawdzenie zakończone');
+      }
+  }
 
+//TEKST
+
+function sprawdzEmail() {
+    const emailElement = document.getElementById('emailInput');
+    const emailWynikElement = document.getElementById('emailWynik');
+
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (regexEmail.test(emailElement.value)) {
+      emailWynikElement.textContent = 'Poprawny adres e-mail.';
+    } else {
+      emailWynikElement.textContent = 'Niepoprawny adres e-mail.';
+    }
+  }
+
+function sprawdzHaslo() {
+    const hasloElement = document.getElementById('hasloInput');
+    const hasloWynikElement = document.getElementById('hasloWynik');
+
+    const regexSilneHaslo = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (regexSilneHaslo.test(hasloElement.value)) {
+      hasloWynikElement.textContent = 'Silne hasło.';
+    } else {
+      hasloWynikElement.textContent = 'Hasło musi zawierać 8 znaków, tym małą literę, dużą literę, cyfrę i znak specjalny.';
+    }
+  }
