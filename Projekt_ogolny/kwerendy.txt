@@ -7,7 +7,7 @@ WHERE c.name = 'Electronics';
 
 2.info o zamówieniach konkretnego kilenta
 
-SELECT o.order_id, o.order_date, o.status, oi.quantity, oi.price, p.name AS product_name
+SELECT o.order_id, o.order_date, o.status, oi.quantity, oi.price, p.name product_name
 FROM `orders` o
 JOIN `order_items` oi ON o.order_id = oi.order_id
 JOIN `products` p ON oi.product_id = p.product_id
@@ -22,16 +22,17 @@ ORDER BY p.price DESC;
 
 4.liczba zamówionych produktów i ich wartość
 
-SELECT o.order_id, SUM(oi.quantity) AS total_items, SUM(oi.quantity * oi.price) AS total_value
+SELECT o.order_id, SUM(oi.quantity) total_items, SUM(oi.quantity * oi.price) total_value
 FROM `order_items` oi
 JOIN `orders` o ON oi.order_id = o.order_id
 GROUP BY o.order_id;
 
 5. produkty zamówione w danym okresie
 
-SELECT p.product_id, p.name, oi.quantity, oi.price
+SELECT p.product_id, p.name, oi.quantity, oi.price, SUM(oi.quantity * oi.price) total_value
 FROM `order_items` oi
 JOIN `products` p ON oi.product_id = p.product_id
 JOIN `orders` o ON oi.order_id = o.order_id
-WHERE o.order_date BETWEEN '2024-11-20' AND '2024-11-22';
+WHERE o.order_date BETWEEN '2024-11-20' AND '2024-11-22' 
+GROUP BY p.product_id;
 
