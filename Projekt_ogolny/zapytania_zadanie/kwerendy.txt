@@ -50,4 +50,8 @@ JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id
 HAVING COUNT(o.order_id) > 1;
 
+8. dodanie danych do tabeli 
+
+INSERT INTO products (name, description, price, category_id, created_at) 
+VALUES ('Smart Watch', 'Nowoczesny zegarek smartwatch', 199.99, 1, '2024-11-29 12:10:54');
 
