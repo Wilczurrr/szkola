@@ -55,3 +55,9 @@ HAVING COUNT(o.order_id) > 1;
 INSERT INTO products (name, description, price, category_id, created_at) 
 VALUES ('Smart Watch', 'Nowoczesny zegarek smartwatch', 199.99, 1, '2024-11-29 12:10:54');
 
+9. podwyższa cenę o 10% przedmiotów będących w kategorii eleketronika
+
+UPDATE products
+SET price = price * 1.10
+WHERE (SELECT category_id FROM categories WHERE name="Electronics");
+
