@@ -39,7 +39,7 @@ GROUP BY p.product_id;
 --6. zamówienia które nie mają przypisanych produktów 
 
 SELECT o.order_id, o.order_date, oi.product_id, oi.quantity, oi.price
-FROM orders o
+FROM `orders` o
 LEFT JOIN order_items oi ON o.order_id = oi.order_id;
 
 --7. klieńci mający wiecej niż 1 zamówienie 
