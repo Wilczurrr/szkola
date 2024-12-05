@@ -45,8 +45,8 @@ LEFT JOIN order_items oi ON o.order_id = oi.order_id;
 --7. klieńci mający wiecej niż 1 zamówienie 
 
 SELECT c.customer_id, c.name, COUNT(o.order_id) total_orders
-FROM customers c
-JOIN orders o ON c.customer_id = o.customer_id
+FROM `customers` c
+JOIN `orders` o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id
 HAVING COUNT(o.order_id) > 1;
 
@@ -60,12 +60,12 @@ WHERE p.name LIKE '%Blender%';
 
 --9. dodanie danych do tabeli 
 
-INSERT INTO products (name, description, price, category_id, created_at) 
+INSERT INTO `products` (name, description, price, category_id, created_at) 
 VALUES ('Smart Watch', 'Nowoczesny zegarek smartwatch', 199.99, 1, '2024-11-29 12:10:54');
 
 --10. podwyższa cenę o 10% przedmiotów będących w kategorii eleketronika
 
-UPDATE products
+UPDATE `products`
 SET price = price * 1.10
 WHERE (SELECT category_id FROM categories WHERE name="Electronics");
 
