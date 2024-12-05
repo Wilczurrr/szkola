@@ -1,4 +1,4 @@
-1.każdy produkt w elektronice
+1.każdy produkt w kategorii elektronika
 
 SELECT p.product_id, p.name, p.description, p.price
 FROM `products` p
@@ -44,7 +44,7 @@ LEFT JOIN order_items oi ON o.order_id = oi.order_id;
 
 7. klieńci mający wiecej niż 1 zamówienie 
 
-SELECT c.customer_id, c.name, COUNT(o.order_id) AS total_orders
+SELECT c.customer_id, c.name, COUNT(o.order_id) total_orders
 FROM customers c
 JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id
@@ -52,7 +52,7 @@ HAVING COUNT(o.order_id) > 1;
 
 8. zamówienia w których prodókt zawiera nazwe blender
 
-SELECT o.order_id, o.customer_id, o.order_date, oi.product_id, p.name AS product_name
+SELECT o.order_id, o.customer_id, o.order_date, oi.product_id, p.name product_name
 FROM `orders` o
 JOIN `order_items` oi ON o.order_id = oi.order_id
 JOIN `products` p ON oi.product_id = p.product_id
