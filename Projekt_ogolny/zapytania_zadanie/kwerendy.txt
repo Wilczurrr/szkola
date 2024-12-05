@@ -50,12 +50,20 @@ JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id
 HAVING COUNT(o.order_id) > 1;
 
-8. dodanie danych do tabeli 
+8. zamówienia w których prodókt zawiera nazwe blender
+
+SELECT o.order_id, o.customer_id, o.order_date, oi.product_id, p.name AS product_name
+FROM `orders` o
+JOIN `order_items` oi ON o.order_id = oi.order_id
+JOIN `products` p ON oi.product_id = p.product_id
+WHERE p.name LIKE '%Blender%';
+
+9. dodanie danych do tabeli 
 
 INSERT INTO products (name, description, price, category_id, created_at) 
 VALUES ('Smart Watch', 'Nowoczesny zegarek smartwatch', 199.99, 1, '2024-11-29 12:10:54');
 
-9. podwyższa cenę o 10% przedmiotów będących w kategorii eleketronika
+10. podwyższa cenę o 10% przedmiotów będących w kategorii eleketronika
 
 UPDATE products
 SET price = price * 1.10
