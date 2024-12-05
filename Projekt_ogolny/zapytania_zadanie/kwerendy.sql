@@ -56,7 +56,7 @@ SELECT o.order_id, o.customer_id, o.order_date, oi.product_id, p.name product_na
 FROM `orders` o
 JOIN `order_items` oi ON o.order_id = oi.order_id
 JOIN `products` p ON oi.product_id = p.product_id
-WHERE p.name LIKE '%Blender%';
+WHERE p.name LIKE 'Blen%';
 
 --9. dodanie danych do tabeli 
 
