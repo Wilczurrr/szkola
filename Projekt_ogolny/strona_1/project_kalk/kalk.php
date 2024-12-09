@@ -18,7 +18,7 @@ function calculateInput($userInput){
     }
     if (!empty($char)) {
         $arr[] = $char;
-    }
+    } 
 
     $current = 0;
     $action = null;
@@ -78,22 +78,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Simple Calculator</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .main {
-            margin: 10% auto;
-            padding-left: 40%;
-        }
-        .form-control {
-            width: 100%;
-            margin-bottom: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 <div class="main">
-    <h3>Simple Calculator</h3>
-    <div style="border: 1px solid #ccc; border-radius: 3px; padding: 5px; display: inline-block">
+    <h3>Kalkulator</h3>
+    <div>
         <form method="post" id="form">
             <input class="form-control" type="text" value="<?php echo implode("", $input); ?>" readonly />
             <input class="form-control" type="hidden" name="input" value='<?php echo json_encode($input); ?>'/>
@@ -133,4 +124,3 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </div>
 </body>
 </html>
-
