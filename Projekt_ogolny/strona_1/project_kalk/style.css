@@ -1,1 +1,139 @@
+/* Globalne ustawienia */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Nagłówek kalkulatora */
+h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Główne opakowanie kalkulatora */
+.main {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    width: 380px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Styl dla pól tekstowych */
+.form-control {
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    text-align: right;
+    font-size: 22px;
+    background-color: #fafafa;
+    color: #333;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #3498db;
+    background-color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    margin: 10px;
+    width: 75px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+input[type="submit"]:active {
+    background-color: #1abc9c;
+}
+
+input[type="submit"].special {
+    background-color: #e74c3c;
+}
+
+input[type="submit"].special:hover {
+    background-color: #c0392b;
+}
+
+input[type="submit"].equal {
+    background-color: #2ecc71;
+}
+
+input[type="submit"].equal:hover {
+    background-color: #27ae60;
+}
+
+input[type="submit"].equal:active {
+    background-color: #16a085;
+}
+
+/* Układ przycisków */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 0;
+    text-align: center;
+}
+
+table input {
+    font-size: 22px;
+    font-weight: bold;
+    width: 60px;
+}
+
+/* Dostosowanie przycisków do rozmiaru */
+table input.special {
+    width: 70px;
+}
+
+table input.equal {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Stylizacja dla przycisków usuwania i resetowania */
+input[name="c"],
+input[name="back"] {
+    background-color: #e74c3c;
+    width: 70px;
+    font-size: 22px;
+}
+
+input[name="c"]:hover,
+input[name="back"]:hover {
+    background-color: #c0392b;
+}
+
+/* Formatywanie dla układu formularza */
+form {
+    display: inline-block;
+    width: 100%;
+}
 
