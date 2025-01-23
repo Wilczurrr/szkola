@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadania JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+           
+            <label for="width">Szerokość:</label>
+            <input type="range" oninput="rozmiar()" min="1" max="1000" id="width">
+            <input type="number" id="range1Value" value="" ><br>
+            <label for="height">Wyskość:</label> 
+            <input type="range" oninput="rozmiar()" min="1" max="1000" id="height">
+            <input type="number" id="range2Value" value="" ><br><br>
 
+            <label for="jednostka">Jednostka:</label>
+            <select id="jednostka">
+                <option value="cm">cm</option>
+                <option value="in">in</option>
+                <option value="mm">mm</option>
+                <option value="px">px</option>
+                <option value="pt">pt</option>
+                <option value="pc"><pc/option>
+            </select><br>
+            <button type="reset" onclick="reset()">Reset</button><br>
+            <img src="obrazek.jpg" alt="obrazek">
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
