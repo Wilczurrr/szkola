@@ -6,15 +6,15 @@
     <title>Zadania JS</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="reset_load()">
     <main>
-           
             <label for="width">Szerokość:</label>
-            <input type="range" oninput="rozmiar()" min="1" max="1000" id="width">
-            <input type="number" id="range1Value" value="" ><br>
+            <input type="range" oninput="rozmiar()" min="1" max="" id="width">
+            <input type="number" id="range1Value" value="" disabled><br>
+
             <label for="height">Wyskość:</label> 
-            <input type="range" oninput="rozmiar()" min="1" max="1000" id="height">
-            <input type="number" id="range2Value" value="" ><br><br>
+            <input type="range" oninput="rozmiar()" min="1" max="" id="height">
+            <input type="number" id="range2Value" value="" disabled><br>
 
             <label for="jednostka">Jednostka:</label>
             <select id="jednostka">
@@ -23,10 +23,15 @@
                 <option value="mm">mm</option>
                 <option value="px">px</option>
                 <option value="pt">pt</option>
-                <option value="pc"><pc/option>
+                <option value="pc">pc</option>
             </select><br>
-            <button type="reset" onclick="reset()">Reset</button><br>
-            <img src="obrazek.jpg" alt="obrazek">
+
+            <label for="opacity">Przeźroczystość(%)</label>
+            <input type="range" oninput="opacity()" id="opacity" min="0" max="100" id="opacity">
+            <input type="number" id="range3Value" value="" disabled><br>
+
+            <button type="reset" onclick="reset_load()">Reset</button><br>
+            <img src="obrazek.jpg" alt="obrazek" id="obrazek">
     </main>
 
 
