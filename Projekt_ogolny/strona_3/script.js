@@ -20,45 +20,24 @@ function rozmiar(){
     const wmax = document.getElementById("width");
     const hmax =  document.getElementById("height");
 
-    switch(jednostka){
-        case "cm":
-            wmax.setAttribute("max", 50);
-            hmax.setAttribute("max", 50);
-            img.style.width =  width + jednostka;
-            img.style.height = height + jednostka;
-            break;
-        case "in":
-            wmax.setAttribute("max", 60);
-            hmax.setAttribute("max", 60);
-            img.style.width =  width + jednostka;
-            img.style.height = height + jednostka;
-            break;
-        case "pt":
-            wmax.setAttribute("max", 500);
-            hmax.setAttribute("max", 500);
-            img.style.width =  width + jednostka;
-            img.style.height = height + jednostka;
-            break;
-        case "pc":
-            wmax.setAttribute("max", 50);
-            hmax.setAttribute("max", 50);
-            img.style.width =  width + jednostka;
-            img.style.height = height + jednostka;
-            break;
-        case "mm":
-            wmax.setAttribute("max", 500);
-            hmax.setAttribute("max",500 );
-            img.style.width =  width + jednostka;
-            img.style.height = height + jednostka;
-            break;
-        case "px":
-            wmax.setAttribute("max", 1000);
-            hmax.setAttribute("max", 1000);
-            img.style.width =  height + jednostka;
-            img.style.height = width + jednostka;
-            break;          
-            
+    const jednostki = {
+        "px": {max: 1000, jed: "px" },
+        "cm": {max: 50, jed: "cm" },
+        "in": {max: 50, jed: "in" },
+        "pt": {max: 500, jed: "pt" },
+        "pc": {max: 50, jed: "pc" },
+        "mm": {max: 500, jed: "mm" },
     };
+
+    const ust = jednostki[jednostka];
+    
+    if(ust){
+        wmax.setAttribute("max", ust.max)
+        hmax.setAttribute("max", ust.max)
+        img.style.width =  width + ust.jed;
+        img.style.height = height + ust.jed;
+    }
+
 
     document.getElementById("range1Value").value = width;
     document.getElementById("range2Value").value = height;
